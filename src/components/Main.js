@@ -1,7 +1,7 @@
 import React from 'react'
+import Test from './Test'
 import Header from './Header'
-import Recipes from './Recipes'
-import Button from '@material-ui/core/Button';
+//import Recipes from './Recipes'
 
 const Main = () => {
     return (
