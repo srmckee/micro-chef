@@ -9,22 +9,25 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from 'prop-types';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import ThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
-import purple from "@material-ui/core/colors/purple";
 import green from "@material-ui/core/colors/green";
-
-import logo from "../assets/logo.png"
-import mustache from "../assets/mustache.png"
+import "../fonts/Coiny/Coiny-Regular.ttf";
+import logo from "../assets/logo.png";
+import mustache from "../assets/mustache.png";
 
 //{/*className={classes.menuButton}*/}
 //{/*className={classes.title}*/}
 
-//import "../styles.css";
+import "../index.css";
 
 const styles = {
-    rounded: {
-        borderRadius: 32,
-    },
+    root: {
+        fontFace: {
+            fontFamily: 'Coiny',
+            src: "local('Coiny') url(../fonts/Coiny-Regular.ttf) format('truetype')"
+        }
+    }
 };
+
 const theme = createMuiTheme({
     palette: {
         primary: {
@@ -36,29 +39,29 @@ const theme = createMuiTheme({
         square: false,
         borderRadius: 4,
     },
-    overrides: {
-        MuiPaper: {
-            rounded: false,
-        },
-    },
+    typography: {
+        fontsize: 17,
+        fontFamily: 'Coiny',
+      },
+
 })
 
 function HigherOrderComponent(props) {
     const { classes } = props;
     return <ThemeProvider theme={theme}>
-        <Header className={classes.rounded} ></Header>;
+        <Header className={classes.root} ></Header>;
     </ThemeProvider>
 }
 function Header(props) {
     return (
-        <AppBar position="static" square={false} style={{borderRadius: 20, width: "98%", maxHeight: "4%", margin: "1% auto auto"}}>
-            <Toolbar style={{display: "flex", justifyContent: "space-between"}}>
+        <AppBar position="static" square={false} style={{borderRadius: 20, width: "98%", height: 80, margin: "3% auto auto"}}>
+            <Toolbar style={{display: "inline-flex", justifyContent: "space-between"}}>
                 {/*<IconButton edge="start" color="inherit" aria-label="menu">
                     <MenuIcon />
                 </IconButton>*/}
-                <div style={{justifyContent: "flex-start", flexWrap: "nowrap", display: "inline-block"}}>
-                  <img src={logo} alt="Logo" style={{position: "absolute", top: "-0%", left: "0%", zIndex: 10/*maxHeight: "100%"*/}}/>
-                  <Typography variant="h6">
+                <img src={logo} alt="Logo"  style={{position: "absolute", top: "-30%", left: "1.5%", width:77}} />
+                <div style={{justifyContent: "flex-start", /*flexWrap: "nowrap",*/ display: "inline-block"}}>
+                  <Typography variant="h6" style={{position: "relative", top: "30%", left: "100%"}}>
                     MicroChef
                   </Typography>
                 </div>
