@@ -54,13 +54,13 @@ function Header(props) {
                 </IconButton>*/}
                 <img src={logo} alt="Logo"  style={{position: "absolute", top: "-30%", left: "1.5%", width:77}} />
                 <div style={{justifyContent: "flex-start", /*flexWrap: "nowrap",*/ display: "inline-block"}}>
-                  <Typography  variant="h6" style={{fontFamily:'Coiny', fontSize: 30, position: "relative", top: 12, left: "50%"}}>
+                  <Typography  variant="h6" style={{fontFamily:'Coiny', fontSize: 30, position: "relative", top: 13, left: "55%"}}>
                     MicroChef
                   </Typography>
                 </div>
                 <div style={{justifyContent: "flex-end", flexWrap: "nowrap", display: "inline-block"}}>
-                <Button  style={{color: "white", fontSize: 30,position: "relative",left: -10}}>LOGIN</Button>
-                <Button  style={{color: "white", fontSize: 30,position: "relative",left: -10}}>ABOUT</Button>
+                <Button  style={{fontFamily:'Aclonica', color: "white", fontSize: 20,position: "relative",left: -10, top:4}}>LOGIN</Button>
+                <Button  style={{fontFamily:'Aclonica', color: "white", fontSize: 20,position: "relative",left: -10, top:4}}>ABOUT</Button>
                 <img src={mustache} alt="Mustache" style={{position:"relative",height: 40, top:15}} />
                 </div>
             </Toolbar>
