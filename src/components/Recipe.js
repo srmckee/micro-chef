@@ -25,7 +25,7 @@ export default function MediaCard() {
 
     return (
         <Card className={classes.root}>
-            <CardActionArea>
+            <CardActionArea disableRipple={false}>
                 <CardMedia
                     className={classes.media}
                     image={require("../assets/recipe.png")}
@@ -40,16 +40,17 @@ export default function MediaCard() {
                     </Typography>
                 </CardContent>
             </CardActionArea>
+            {/*
             <CardActions>
-                {/*
                 <Button size="small" color="primary">
                     Share
                 </Button>
                 <Button size="small" color="primary">
                     Learn More
                 </Button>
-                */}
             </CardActions>
+            */}
+
         </Card>
     );
 }

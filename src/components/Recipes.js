@@ -21,8 +21,8 @@ export default function Recipes() {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-            <Grid container spacing={3}>
+        <div className={classes.root} >
+            <Grid container spacing={3} style={{marginBottom: "3%"}}>
                 <Grid item xs>
                     <Recipe className={classes.recipe}>xs</Recipe>
                 </Grid>
@@ -33,7 +33,7 @@ export default function Recipes() {
                     <Recipe className={classes.recipe}>xs</Recipe>
                 </Grid>
             </Grid>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} style={{marginBottom: "3%"}}>
                 <Grid item xs>
                     <Recipe className={classes.recipe}>xs</Recipe>
                 </Grid>
@@ -44,7 +44,7 @@ export default function Recipes() {
                     <Recipe className={classes.recipe}>xs</Recipe>
                 </Grid>
             </Grid>
-            <Grid container spacing={3}>
+            <Grid container spacing={3} style={{marginBottom: "3%"}}>
                 <Grid item xs>
                     <Recipe className={classes.recipe}>xs</Recipe>
                 </Grid>

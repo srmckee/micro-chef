@@ -23,12 +23,13 @@ const styles = {
 };
 
 const theme = createMuiTheme({
+    /*
     palette: {
         primary: {
             main: '#E3D5BF',
         },
         secondary: {main: '#000000'},
-    },
+    },*/
     shape: {
         square: false,
         borderRadius: 4,
@@ -47,7 +48,7 @@ function HigherOrderComponent(props) {
 }
 function Header(props) {
     return (
-        <AppBar position="static" square={false} style={{ borderRadius: 20, width: "98%", height: 80, margin: "3% auto auto"}}>
+        <AppBar position="static" square={false} style={{ backgroundColor: "#E3D5BF", borderRadius: 20, width: "98%", height: 80, margin: "3% auto 2%"}}>
             <Toolbar style={{display: "inline-flex", justifyContent: "space-between"}}>
                 {/*<IconButton edge="start" color="inherit" aria-label="menu">
                     <MenuIcon />
