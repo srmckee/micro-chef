@@ -20,9 +20,8 @@ const useStyles = makeStyles({
     },
 });
 
-export default function MediaCard() {
+export default function MediaCard(props) {
     const classes = useStyles();
-
     return (
         <Card className={classes.root}>
             <CardActionArea disableRipple={false}>
@@ -33,7 +32,7 @@ export default function MediaCard() {
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                       Tasty Dish
+                        {props.data}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         This is an example recipe description
