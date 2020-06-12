@@ -27,8 +27,8 @@ export default function MediaCard(props) {
             <CardActionArea disableRipple={false}>
                 <CardMedia
                     className={classes.media}
-                    image={require("../assets/recipe.png")}
-                    //src={props.data.image}
+                    //image={require("../assets/recipe.png")}
+                    image={props.data.image}
                     title={props.data.image}
                 />
                 <CardContent>
