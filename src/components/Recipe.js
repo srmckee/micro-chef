@@ -28,11 +28,12 @@ export default function MediaCard(props) {
                 <CardMedia
                     className={classes.media}
                     image={require("../assets/recipe.png")}
-                    title="Recipe"
+                    //src={props.data.image}
+                    title={props.data.image}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        {props.data}
+                        {props.data.title}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
                         This is an example recipe description

@@ -20,30 +20,46 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Recipes() {
     const classes = useStyles();
-    const [recipeData, setRecipeData] = useState(null);
+    const [recipeData, setRecipeData] = useState(null);  //chunked
     const [isLoading, setIsLoading] = useState(true);
     useEffect(async () => {
             setIsLoading(true);
             getRecipeInfo().then((recipes) => {
-                    setRecipeData(recipes);
-                    setIsLoading(false);
+                //setRecipeData(recipes);
+                let recipeList = recipes.data.data.recipesLists;
+                let chunked = [];
+                for (let i = 0; i < recipeList.length; i+=3) {
+                    let chunk = recipeList.slice(i, i + 3);
+                    if (chunk.length === 3) {
+                        chunked.push(chunk);
+                    }
                 }
-            );
+                setRecipeData(chunked);
+                setIsLoading(false);
+           });
+
     }, []);
+
     return (
-        <div className={classes.root} >
-            <Grid container spacing={3} style={{marginBottom: "3%"}}>
-                <Grid item xs>
-                    <Recipe data={isLoading ? "Loading..." : recipeData.data.data.recipesList.title}
-                            className={classes.recipe}>xs</Recipe>
-                </Grid>
-                <Grid item xs>
-                    <Recipe className={classes.recipe}>xs</Recipe>
-                </Grid>
-                <Grid item xs>
-                    <Recipe className={classes.recipe}>xs</Recipe>
-                </Grid>
-            </Grid>{/*
+        <React.Fragment>
+        {(!isLoading) && (
+            <div className={classes.root} >
+           <Grid container spacing={3} style={{marginBottom: "3%"}}>
+               {recipeData.map(row => (
+               <Grid container spacing={3} style={{marginBottom: "3%"}}>
+                   <Grid item xs>
+                       <Recipe data={row[0]}
+                               className={classes.recipe}>xs</Recipe>
+                   </Grid>
+                   <Grid item xs>
+                       <Recipe data={row[1]} className={classes.recipe}>xs</Recipe>
+                   </Grid>
+                   <Grid item xs>
+                       <Recipe data={row[2]} className={classes.recipe}>xs</Recipe>
+                   </Grid>
+               </Grid>))
+               };
+           </Grid>{/*
             <Grid container spacing={3} style={{marginBottom: "3%"}}>
                 <Grid item xs>
                     <Recipe className={classes.recipe}>xs</Recipe>
@@ -66,6 +82,7 @@ export default function Recipes() {
                     <Recipe className={classes.recipe}>xs</Recipe>
                 </Grid>
             </Grid>*/}
-        </div>
+        </div>)}
+        </React.Fragment>
     );
 }
