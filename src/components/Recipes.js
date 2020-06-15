@@ -4,12 +4,19 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Recipe from "./Recipe";
 import getRecipeInfo from "../lib/getRecipeInfo";
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+import '../index.css'; //import index css to get font
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         width: "75%",
-        margin: "auto"
+        margin: "auto",
+        fontFace: {
+            fontFamily: 'Coiny',
+            src: "local('Coiny'), url(../fonts/Coiny/Coiny-Regular.ttf) format('truetype')"
+        }
     },
     recipe: {
         padding: theme.spacing(2),
@@ -18,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Recipes() {
+export default function Recipes({match}) {
     const classes = useStyles();
     const [recipeData, setRecipeData] = useState(null);  //chunked
     const [isLoading, setIsLoading] = useState(true);
@@ -59,29 +66,46 @@ export default function Recipes() {
                    </Grid>
                </Grid>))
                };
-           </Grid>{/*
-            <Grid container spacing={3} style={{marginBottom: "3%"}}>
-                <Grid item xs>
-                    <Recipe className={classes.recipe}>xs</Recipe>
-                </Grid>
-                <Grid item xs>
-                    <Recipe className={classes.recipe}>xs</Recipe>
-                </Grid>
-                <Grid item xs>
-                    <Recipe className={classes.recipe}>xs</Recipe>
-                </Grid>
-            </Grid>
-            <Grid container spacing={3} style={{marginBottom: "3%"}}>
-                <Grid item xs>
-                    <Recipe className={classes.recipe}>xs</Recipe>
-                </Grid>
-                <Grid item xs>
-                    <Recipe className={classes.recipe}>xs</Recipe>
-                </Grid>
-                <Grid item xs>
-                    <Recipe className={classes.recipe}>xs</Recipe>
-                </Grid>
-            </Grid>*/}
+           </Grid>
+               <div style={{marginLeft: "42%", marginRight: "42%"}}>
+                   <Grid container spacing={3} style={{marginBottom: "3%"}}>
+                       <Grid item xs>
+                           <Typography component={Link} to={`/page/2`} style={{fontFamily: "Coiny",
+                               textDecoration: "none", color: '#DBA496'}} >
+                               1
+                           </Typography>
+                       </Grid>
+                       <Grid item xs>
+                               <Typography component={Link} to={`/page/2`} style={{fontFamily: "Coiny",
+                                   textDecoration: "none", color: '#DBA496'}} >
+                               2
+                               </Typography>
+                       </Grid>
+                       <Grid item xs>
+                       <Typography component={Link} to={`/page/3`} style={{fontFamily: "Coiny",
+                           textDecoration: "none", color: '#DBA496'}} >
+                           3
+                       </Typography>
+                       </Grid>
+
+                           <Grid item xs>
+
+                       <Typography component={Link} to={`/page/4`} style={{fontFamily: "Coiny",
+                           textDecoration: "none", color: '#DBA496'}} >
+                           4
+                       </Typography>
+                           </Grid>
+
+                               <Grid item xs>
+
+                       <Typography component={Link} to={`/page/5`} style={{fontFamily: "Coiny",
+                           textDecoration: "none", color: '#DBA496'}} >
+                           5
+                       </Typography>
+                               </Grid>
+
+                   </Grid>
+               </div>
         </div>)}
         </React.Fragment>
     );

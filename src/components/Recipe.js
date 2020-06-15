@@ -36,7 +36,6 @@ export default function MediaCard(props) {
                         {props.data.title}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        This is an example recipe description
                     </Typography>
                 </CardContent>
             </CardActionArea>
