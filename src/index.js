@@ -1,19 +1,20 @@
+// Authors: Spencer McKee, Daniel Obichie, and Yolanda Cao
+// MicroChef react app entry point
+// Contains routing for app
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import {BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Recipes from './components/Recipes';
 import * as serviceWorker from './serviceWorker';
-import {BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import './index.css';
 
 ReactDOM.render(
     <Router>
         <React.StrictMode>
             <Redirect exact path="/" to={"/page/1"}/>
             <Route path="/" component={Header}/>
-            <Route exact path="/" component={Recipes}/>
             <Route exact path="/page/:id" component={Recipes}/>
             <Route path="/" component={Footer}/>
         </React.StrictMode>,
