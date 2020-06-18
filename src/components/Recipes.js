@@ -1,12 +1,12 @@
+// Authors: Spencer McKee, Daniel Obichie, and Yolanda Cao
+// Component for recipe grid page
 import React, {useEffect, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Recipe from "./Recipe";
 import getRecipeInfo from "../lib/getRecipeInfo";
-import { BrowserRouter as Router, Link } from 'react-router-dom';
 import '../index.css'; //import index css to get font
-import Typography from "@material-ui/core/Typography";
+import RecipesNav from "./RecipesNav";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -27,12 +27,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Recipes({match}) {
     const classes = useStyles();
-    const [recipeData, setRecipeData] = useState(null);  //chunked
+    const [recipeData, setRecipeData] = useState(null);  // list containing lists of three recipes
     const [isLoading, setIsLoading] = useState(true);
     useEffect(async () => {
             setIsLoading(true);
-            getRecipeInfo().then((recipes) => {
-                //setRecipeData(recipes);
+            await getRecipeInfo().then((recipes) => {
                 let recipeList = recipes.data.data.recipesLists;
                 let chunked = [];
                 for (let i = 0; i < recipeList.length; i+=3) {
@@ -67,45 +66,7 @@ export default function Recipes({match}) {
                </Grid>))
                };
            </Grid>
-               <div style={{marginLeft: "42%", marginRight: "42%"}}>
-                   <Grid container spacing={3} style={{marginBottom: "3%"}}>
-                       <Grid item xs>
-                           <Typography component={Link} to={`/page/2`} style={{fontFamily: "Coiny",
-                               textDecoration: "none", color: '#DBA496'}} >
-                               1
-                           </Typography>
-                       </Grid>
-                       <Grid item xs>
-                               <Typography component={Link} to={`/page/2`} style={{fontFamily: "Coiny",
-                                   textDecoration: "none", color: '#DBA496'}} >
-                               2
-                               </Typography>
-                       </Grid>
-                       <Grid item xs>
-                       <Typography component={Link} to={`/page/3`} style={{fontFamily: "Coiny",
-                           textDecoration: "none", color: '#DBA496'}} >
-                           3
-                       </Typography>
-                       </Grid>
-
-                           <Grid item xs>
-
-                       <Typography component={Link} to={`/page/4`} style={{fontFamily: "Coiny",
-                           textDecoration: "none", color: '#DBA496'}} >
-                           4
-                       </Typography>
-                           </Grid>
-
-                               <Grid item xs>
-
-                       <Typography component={Link} to={`/page/5`} style={{fontFamily: "Coiny",
-                           textDecoration: "none", color: '#DBA496'}} >
-                           5
-                       </Typography>
-                               </Grid>
-
-                   </Grid>
-               </div>
+           <RecipesNav />
         </div>)}
         </React.Fragment>
     );
