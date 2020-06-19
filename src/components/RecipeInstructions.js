@@ -1,28 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Typography from "@material-ui/core/Typography";
-import getRecipeInfoPage from "../lib/getRecipeInfoPage";
 
-export default function RecipeInstructions() {
-  const [recipeData, setRecipeData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(async () => {
-    setIsLoading(true);
-    getRecipeInfoPage().then((recipeInfo) => {
-      let stepsList =
-        recipeInfo.data.data.recipesListOfficials[0].analyzedInstructions[0];
-      let listedOut = [];
-      for (let i = 0; i < stepsList.steps.length; i += 1) {
-        listedOut.push(stepsList.steps[i]);
-      }
-      //console.log(listedOut);
-      setRecipeData(listedOut);
-      setIsLoading(false);
-    });
-  }, []);
-
+export default function RecipeInstructions(props) {
   return (
     <React.Fragment>
-      {!isLoading && (
         <div>
           <Typography
             variant="subtitle2"
@@ -37,7 +18,7 @@ export default function RecipeInstructions() {
           >
             Steps:
           </Typography>
-          {recipeData.map((entry) => (
+          {props.data.map((entry) => (
             <li
               style={{
                 fontFamily: "Comfortaa",
@@ -59,4 +40,3 @@ export default function RecipeInstructions() {
   );
 }
 
-//export default RecipeInstructions;

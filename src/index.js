@@ -3,10 +3,12 @@
 // Contains routing for app
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Recipes from './components/Recipes';
+import RecipePage from './components/RecipePage';
+import { Button } from '@material-ui/core';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 
@@ -16,6 +18,7 @@ ReactDOM.render(
             <Redirect exact path="/" to={"/page/1"}/>
             <Route path="/" component={Header}/>
             <Route exact path="/page/:id" component={Recipes}/>
+            <Route exact path="/recipe/:recipeid" component={RecipePage}/>
             <Route path="/" component={Footer}/>
         </React.StrictMode>,
     </Router>,

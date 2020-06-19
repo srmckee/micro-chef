@@ -52,7 +52,6 @@ export default function RecipesNav() {
                     5
                 </Typography>
             </Grid>
-
         </Grid>
     </div>)
 };

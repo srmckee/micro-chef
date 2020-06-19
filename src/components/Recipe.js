@@ -17,7 +17,7 @@ export default function MediaCard(props) {
                     title={props.data.image}
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography style={{fontFamily: 'Abel', fontWeight: 'bold'}} gutterBottom variant="h5" component="h2">
                         {props.data.title}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">

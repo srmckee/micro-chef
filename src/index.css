@@ -8,6 +8,11 @@
   src: local('Aclonica'), url('./fonts/Aclonica/Aclonica-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Abel';
+  src: local('Abel'), url('./fonts/Abel/Abel-Regular.ttf') format('truetype');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

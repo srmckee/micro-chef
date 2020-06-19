@@ -7,16 +7,13 @@ import Recipe from "./Recipe";
 import getRecipeInfo from "../lib/getRecipeInfo";
 import '../index.css'; //import index css to get font
 import RecipesNav from "./RecipesNav";
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         width: "75%",
         margin: "auto",
-        fontFace: {
-            fontFamily: 'Coiny',
-            src: "local('Coiny'), url(../fonts/Coiny/Coiny-Regular.ttf) format('truetype')"
-        }
     },
     recipe: {
         padding: theme.spacing(2),
@@ -29,21 +26,23 @@ export default function Recipes({match}) {
     const classes = useStyles();
     const [recipeData, setRecipeData] = useState(null);  // list containing lists of three recipes
     const [isLoading, setIsLoading] = useState(true);
-    useEffect(async () => {
-            setIsLoading(true);
-            await getRecipeInfo().then((recipes) => {
-                let recipeList = recipes.data.data.recipesLists;
-                let chunked = [];
-                for (let i = 0; i < recipeList.length; i+=3) {
-                    let chunk = recipeList.slice(i, i + 3);
-                    if (chunk.length === 3) {
-                        chunked.push(chunk);
+    useEffect(() => {
+            async function getData() {
+                setIsLoading(true);
+                await getRecipeInfo().then((recipes) => {
+                    let recipeList = recipes.data.data.recipesLists;
+                    let chunked = [];
+                    for (let i = 0; i < recipeList.length; i+=3) {
+                        let chunk = recipeList.slice(i, i + 3);
+                        if (chunk.length === 3) {
+                            chunked.push(chunk);
+                        }
                     }
-                }
-                setRecipeData(chunked);
-                setIsLoading(false);
-           });
-
+                    setRecipeData(chunked);
+                    setIsLoading(false);
+                });
+            }
+            getData();
     }, []);
 
     return (
@@ -51,17 +50,22 @@ export default function Recipes({match}) {
         {(!isLoading) && (
             <div className={classes.root} >
            <Grid container spacing={3} style={{marginBottom: "3%"}}>
-               {recipeData.map(row => (
-               <Grid container spacing={3} style={{marginBottom: "3%"}}>
-                   <Grid item xs>
-                       <Recipe data={row[0]}
-                               className={classes.recipe}>xs</Recipe>
+               {recipeData.map((row, i) => (
+               <Grid container spacing={3} key={i} style={{marginBottom: "3%"}}>
+                   <Grid item xs key={row[0].id}>
+                       <Link to={`/recipe/${row[0].id}`} key={row[0].id}>
+                       <Recipe data={row[0]} key={row[0].id} className={classes.recipe}>xs</Recipe>
+                       </Link>
                    </Grid>
-                   <Grid item xs>
-                       <Recipe data={row[1]} className={classes.recipe}>xs</Recipe>
+                   <Grid item xs key={row[1].id}  >
+                       <Link to={`/recipe/${row[1].id}`} key={row[1].id}>
+                       <Recipe data={row[1]} className={classes.recipe} key={row[1].id}>xs</Recipe>
+                       </Link>
                    </Grid>
-                   <Grid item xs>
-                       <Recipe data={row[2]} className={classes.recipe}>xs</Recipe>
+                   <Grid item xs key={row[2].id}>
+                       <Link to={`/recipe/${row[2].id}`} key={row[2].id}>
+                       <Recipe data={row[2]} className={classes.recipe} key={row[2].id}>xs</Recipe>
+                       </Link>
                    </Grid>
                </Grid>))
                };

@@ -1,26 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Typography from "@material-ui/core/Typography";
-import getRecipeInfoPage from "../lib/getRecipeInfoPage";
 
-export default function RecipeIngredients() {
-  const [ingredients, setIngredients] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(async () => {
-    setIsLoading(true);
-    getRecipeInfoPage().then((recipeInfo) => {
-      let ingredList =
-        recipeInfo.data.data.recipesListOfficials[0].extendedIngredients;
-      let listedOut = [];
-      for (let i = 0; i < ingredList.length; i += 1) {
-        listedOut.push(ingredList[i]);
-      }
-      setIngredients(listedOut);
-      setIsLoading(false);
-    });
-  }, []);
+export default function RecipeIngredients(props) {
   return (
     <React.Fragment>
-      {!isLoading && (
         <div>
           <Typography
             variant="subtitle2"
@@ -28,14 +11,14 @@ export default function RecipeIngredients() {
               fontFamily: "Coiny",
               fontSize: 20,
               position: "relative",
-              transform: "translate(-32%, -32%)",
+              //transform: "translate(-32%, -32%)",
               top: 50,
               align: "left",
             }}
           >
             Ingredients:
           </Typography>
-          {ingredients.map((entry) => (
+          {props.data.map((entry) => (
             <ul>
               <Typography
                 style={{
@@ -43,7 +26,7 @@ export default function RecipeIngredients() {
                   fontSize: 16,
                   top: 50,
                   position: "relative",
-                  transform: "translate(-30%, -30%)",
+                  //transform: "translate(-30%, -30%)",
                 }}
                 key={entry.id}
               >
@@ -57,5 +40,3 @@ export default function RecipeIngredients() {
     </React.Fragment>
   );
 }
-
-//export default RecipeIngredients;

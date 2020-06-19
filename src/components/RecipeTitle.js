@@ -1,19 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Typography from "@material-ui/core/Typography";
-import food from "../assets/recipe.png";
-import getRecipeInfoPage from "../lib/getRecipeInfoPage";
 
-export default function RecipeTitle() {
-  const [recipeTitle, setRecipeTitle] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(async () => {
-    setIsLoading(true);
-    getRecipeInfoPage().then((recipeInfo) => {
-      let title = recipeInfo.data.data.recipesListOfficials[0].title;
-      setRecipeTitle(title);
-      setIsLoading(false);
-    });
-  }, []);
+export default function RecipeTitle(props) {
   return (
     <div>
       <Typography
@@ -27,10 +15,9 @@ export default function RecipeTitle() {
           align: "center",
         }}
       >
-        {recipeTitle}
+        {props.data}
       </Typography>
     </div>
   );
 }
 
-//export default RecipeTitle;
