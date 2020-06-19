@@ -30,7 +30,7 @@ export default function Recipes({match}) {
             async function getData() {
                 setIsLoading(true);
                 await getRecipeInfo().then((recipes) => {
-                    let recipeList = recipes.data.data.recipesLists;
+                    let recipeList = recipes.data.data.recipesListOfficials;
                     let chunked = [];
                     for (let i = 0; i < recipeList.length; i+=3) {
                         let chunk = recipeList.slice(i, i + 3);
