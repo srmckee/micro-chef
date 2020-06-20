@@ -11,7 +11,7 @@ import mustache from "../assets/mustache.png";
 
 export default function Header(props) {
     return (
-        <AppBar position="static" square={false} style={{backgroundColor: "#E3D5BF", borderRadius: 20, width: "98%", height: 80, margin: "3% auto 2%"}}>
+        <AppBar position="static" square={false} style={{backgroundColor: "#E3D5BF", borderRadius: 20, width: "98%", height: 80, margin: "3% auto 3.5%"}}>
             <Toolbar style={{display: "inline-flex", justifyContent: "space-between"}}>
                 <img src={logo} alt="Logo"  style={{position: "absolute", top: "-30%", left: "1.5%", width:77}} />
                 <div style={{justifyContent: "flex-start", display: "inline-block"}}>
