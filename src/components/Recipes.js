@@ -50,7 +50,7 @@ export default function Recipes({match}) {
         {(!isLoading) && (
             <div className={classes.root} >
            <Grid container spacing={3} style={{marginBottom: "3%"}}>
-               {recipeData.map((row, i) => (
+               {recipeData.slice((match.params.id - 1)*10, (match.params.id)*10).map((row, i) => (
                <Grid container spacing={3} key={i} style={{marginBottom: "3%"}}>
                    <Grid item xs key={row[0].id}>
                        <Link to={`/recipe/${row[0].id}`} key={row[0].id}>
@@ -70,7 +70,7 @@ export default function Recipes({match}) {
                </Grid>))
                };
            </Grid>
-           <RecipesNav />
+           <RecipesNav pageNum={match.params.id}/>
         </div>)}
         </React.Fragment>
     );
