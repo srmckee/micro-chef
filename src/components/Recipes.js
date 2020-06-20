@@ -12,7 +12,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-        width: "75%",
+        width: "85%",
         margin: "auto",
     },
     recipe: {

@@ -40,10 +40,6 @@ export default function Footer() {
                 </Typography>
                 <Typography variant="h6"
                             style={{fontFamily: 'Coiny', fontSize: 15}}>
-                    Blog
-                </Typography>
-                <Typography variant="h6"
-                            style={{fontFamily: 'Coiny', fontSize: 15}}>
                     Resources
                 </Typography>
             </Toolbar>
