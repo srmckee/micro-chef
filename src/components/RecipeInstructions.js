@@ -35,7 +35,6 @@ export default function RecipeInstructions(props) {
         ))}
         ;
       </div>
-      )}
     </React.Fragment>
   );
 }
