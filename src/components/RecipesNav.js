@@ -4,13 +4,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
-import Icon from '@material-ui/core/Icon';
 
 export default function RecipesNav({pageNum}) {
     let pages = [];
     for (let i = 1; i <= 5; i++) {
-        let isCurPage = pageNum == i;
+        let isCurPage = Number(pageNum) === i;
         pages.push(
         <Grid item xs>
             <>

@@ -13,6 +13,17 @@
   src: local('Abel'), url('./fonts/Abel/Abel-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Comfortaa';
+  src: local('Comfortaa'), url('fonts/Comfortaa/Comfortaa-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: local('Comfortaa'), url('fonts/Comfortaa/Comfortaa-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
