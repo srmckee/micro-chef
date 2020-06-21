@@ -10,7 +10,7 @@ export default function RecipePic(props) {
           transform: "translate(105%, 0%)",
         }}
         src={props.data}
-        alt="food image"
+        alt="food"
       />
     </div>
   );
