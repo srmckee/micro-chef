@@ -22,7 +22,7 @@ export default function RecipeIngredients(props) {
             <ul>
               <Typography
                 style={{
-                  fontFamily: "comfortaa",
+                  fontFamily: "Comfortaa",
                   fontSize: 16,
                   top: 50,
                   position: "relative",

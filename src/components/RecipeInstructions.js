@@ -14,6 +14,7 @@ export default function RecipeInstructions(props) {
             //transform: "translate(-32%, -32%)",
             top: 70,
             align: "left",
+              marginBottom: "15px"
           }}
         >
           Steps:
@@ -26,14 +27,14 @@ export default function RecipeInstructions(props) {
               top: 59,
               position: "relative",
               align: "left",
+                marginLeft: "30px"
               //transform: "translate(-30%, -30%)",
             }}
             key={entry.number}
           >
             {entry.step}
           </li>
-        ))}
-        ;
+        ))};
       </div>
       )}
     </React.Fragment>
