@@ -8,7 +8,7 @@ import getRecipeInfo from "../lib/getRecipeInfo";
 import "../index.css"; //import index css to get font
 import RecipesNav from "./RecipesNav";
 
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
  
 
 
