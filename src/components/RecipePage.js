@@ -17,7 +17,7 @@ export default function RecipePage(props) {
       await getRecipeInfoPage(recipeid).then((recipe) => {
         setRecipeData(recipe.data.data.recipesListOfficials[0]);
         setIsLoading(false);
-      });
+      }
     }
     getData();
   }, [recipeid]);
