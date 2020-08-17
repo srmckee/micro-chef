@@ -97,7 +97,6 @@ export default function Recipes({ match }) {
                   </Grid>
                 </Grid>
               ))}
-            ;
           </Grid>
           <RecipesNav pageNum={match.params.id} />
         </div>

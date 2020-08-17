@@ -34,7 +34,7 @@ export default function RecipeInstructions(props) {
           >
             {entry.step}
           </li>
-        ))};
+        ))}
       </div>
     </React.Fragment>
   );

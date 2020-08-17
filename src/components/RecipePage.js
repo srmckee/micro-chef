@@ -17,7 +17,7 @@ export default function RecipePage(props) {
       await getRecipeInfoPage(recipeid).then((recipe) => {
         setRecipeData(recipe.data.data.recipesListOfficials[0]);
         setIsLoading(false);
-      }
+      });
     }
     getData();
   }, [recipeid]);
@@ -39,11 +39,11 @@ export default function RecipePage(props) {
                 </div>
             </Grid>
             <Grid item xs={6}>
-                <div style={{}}>
-                    <RecipePic data={recipeData.image} style={{}}/>
+                <div>
+                    <RecipePic data={recipeData.image} />
                 </div>
             </Grid>
         </Grid>
     )
-  );
+  )
 }

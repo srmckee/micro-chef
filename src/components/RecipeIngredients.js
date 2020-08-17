@@ -35,8 +35,6 @@ export default function RecipeIngredients(props) {
             </ul>
           ))}
         </div>
-      )}
-      ;
     </React.Fragment>
   );
 }
