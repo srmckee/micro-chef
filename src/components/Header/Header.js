@@ -5,9 +5,9 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import '../index.css'; //import index css to get font
-import logo from "../assets/logo.png";
-import mustache from "../assets/mustache.png";
+import '../../index.css'; //import index css to get font
+import logo from "../../assets/logo.png";
+import mustache from "../../assets/mustache.png";
 
 export default function Header(props) {
     return (

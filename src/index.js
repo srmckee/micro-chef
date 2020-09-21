@@ -4,10 +4,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Recipes from './components/Recipes';
-import RecipePage from './components/RecipePage';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Recipes from './components/Recipes/Recipes';
+import RecipePage from './components/RecipePage/RecipePage';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 

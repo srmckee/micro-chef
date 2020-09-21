@@ -3,10 +3,10 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Recipe from "./Recipe";
-import getRecipeInfo from "../lib/getRecipeInfo";
-import "../index.css"; //import index css to get font
-import RecipesNav from "./RecipesNav";
+import Recipe from "../Recipe/Recipe";
+import getRecipeInfo from "../../lib/getRecipeInfo";
+import "../../index.css"; //import index css to get font
+import RecipesNav from "../RecipesNav/RecipesNav";
 
 import { Link } from "react-router-dom";
  

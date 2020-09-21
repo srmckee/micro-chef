@@ -5,21 +5,26 @@
 import "@testing-library/jest-dom/extend-expect";
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import { screen, wait, waitFor, waitForDomChange } from "@testing-library/dom";
-import Recipes from "../components/Recipes";
-import Header from "../components/Header";
-import App from "../App";
-//import App from "../App";
+import { screen, wait, waitForDomChange } from "@testing-library/dom";
+import Recipes from "../components/Recipes/Recipes";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
-it("renders main page", () => {
-  const { getByText } = render(<App />);
+it("renders Header", () => {
+  const { getByText } = render(<Header />);
   //expect the title of the page microchef to be in the document
   expect(getByText("MicroChef")).toBeInTheDocument();
 });
 
+it("renders Footer", () => {
+  const { getByText } = render(<Footer />);
+  // expect "Micro" in Footer
+  expect(getByText("Micro")).toBeInTheDocument();
+});
+
 it("navigation works", async () => {
-  const container = render(<App />);
-  const { getByRole } = render(<App />);
+  const container = render(<Recipes />);
+  const { getByRole } = render(<Recipes />);
   //wait for 3 seconds
 
   wait(3000).then(() => {

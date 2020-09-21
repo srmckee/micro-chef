@@ -1,0 +1,46 @@
+.app-bar {
+    color: #000000 !important;
+    background-color: #FFFFFF !important;
+    border-radius: 20px !important;
+    width: 98% !important;
+    height: 80px !important;
+    margin: 3% auto 2% !important;
+}
+
+.toolbar {
+    display: inline-flex !important;
+    justify-content: space-between !important;
+}
+
+.h6-prop {
+    font-family: Coiny !important;
+    font-size: 15px !important;
+}
+
+.div-prop {
+    font-family: Coiny !important;
+    flex-wrap: nowrap !important;
+    display: inline-block !important;
+}
+
+.img-prop {
+    display: inline-block !important;
+    float: left !important;
+    height: 50% !important;
+    width: auto !important;
+}
+
+.div-inner {
+    display: inline-block !important;
+    margin-top: 30% ;
+}
+
+.h6-large-prop {
+    position: relative !important;
+    font-family: Coiny !important;
+    font-size: 30px !important;
+}
+
+.bottom-margin {
+    bottom: 20px;
+}

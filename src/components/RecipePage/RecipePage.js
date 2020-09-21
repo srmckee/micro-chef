@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import RecipeTitle from "./RecipeTitle";
-import RecipePrepCookInfo from "./RecipePrepCookInfo";
-import RecipeIngredients from "./RecipeIngredients";
-import RecipePic from "./RecipePic";
-import RecipeInstructions from "./RecipeInstructions";
-import getRecipeInfoPage from "../lib/getRecipeInfoPage";
+import RecipeTitle from "../RecipesTitle/RecipeTitle";
+import RecipePrepCookInfo from "../RecipePrepCookInfo/RecipePrepCookInfo";
+import RecipeIngredients from "../RecipeIngredients/RecipeIngredients";
+import RecipePic from "../RecipePic/RecipePic";
+import RecipeInstructions from "../RecipeInstructions/RecipeInstructions";
+import getRecipeInfoPage from "../../lib/getRecipeInfoPage";
 import Grid from '@material-ui/core/Grid';
 
 export default function RecipePage(props) {
