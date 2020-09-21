@@ -7,7 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-// previous dimensions maxWidth: 345, maxHeight: 235 (more than)
+
 export default function MediaCard(props) {
   let pm = props.data.preparationMinutes;
   let cm = props.data.cookingMinutes;

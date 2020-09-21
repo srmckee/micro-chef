@@ -11,7 +11,11 @@ async function getRecipeInfoPage(recipeId) {
       "https://stitch.mongodb.com/api/client/v2.0/app/micro-chef-biguy/graphql",
       {
         query:
-          `query {recipesListOfficials(sortBy: _ID_ASC, query:{id: ${recipeId}}) {_id, id, title, extendedIngredients{id, image, originalString, amount, measures{us{amount, unitShort, unitLong}, metric{amount, unitShort, unitLong}}}, image,preparationMinutes,cookingMinutes,pricePerServing pricePerServing, analyzedInstructions{steps{number, step}}}}`,
+          `query {recipesListOfficials(sortBy: _ID_ASC, query:{id: ${recipeId}}) 
+              {_id, id, title, extendedIngredients{id, image, originalString, amount, 
+              measures{us{amount, unitShort, unitLong}, metric{amount, unitShort, unitLong}}}, 
+              image,preparationMinutes,cookingMinutes,pricePerServing pricePerServing, 
+              analyzedInstructions{steps{number, step}}}}`,
       },
       { headers: { Authorization: `Bearer ${access_token}` } }
     )

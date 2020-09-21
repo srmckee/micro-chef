@@ -1,0 +1,40 @@
+.toolbar {
+    display: inline-flex !important;
+    justify-content: space-between !important;
+}
+
+.img-prop {
+    position: absolute !important;
+    top: -30% !important;
+    left: 1.5% !important;
+    width: 77px !important;
+}
+
+.div-prop {
+    justify-content: flex-start !important;
+    display: inline-block !important;
+}
+
+.logo-text {
+    color: #000000 !important;
+    font-family: Coiny !important;
+    font-size: 30px !important;
+    position: relative !important;
+    top: 13px !important;
+    left: 55% !important;
+}
+
+.div-group {
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    display: inline-block;
+}
+
+.button-prop {
+    font-family: Aclonica !important;
+    color: white !important;
+    font-size: 20px !important;
+    position: relative !important;
+    left: -10px !important;
+    top: 4px !important;
+}

@@ -10,7 +10,6 @@ export default function RecipeTitle(props) {
           fontFamily: "Coiny",
           fontSize: 30,
           position: "relative",
-          //transform: "translate(-30%, -30%)",
           top: 13,
           align: "center",
         }}

@@ -24,7 +24,11 @@ export default function Footer() {
                     Company
                 </Typography>
                 <div className="div-prop">
-                    <img src={logo} alt="Logo" className="img-prop"/>
+                    <img src={logo} alt="Logo" style={{
+                        display: "inline-block",
+                        float: "left",
+                        height: "50%",
+                        width: "auto"}}/>
                     <div className="div-inner">
                     <Typography variant="h6"
                                 className="h6-large-prop">

@@ -9,7 +9,8 @@ async function getRecipeInfo() {
     let data_response = axios.post('https://stitch.mongodb.com/api/client/v2.0/app/micro-chef-biguy/graphql',
         {
             query:
-                `query {recipesListOfficials(sortBy: _ID_ASC, query:{}, limit: 150) {id, title, image, preparationMinutes, cookingMinutes, pricePerServing}}`,
+                `query {recipesListOfficials(sortBy: _ID_ASC, query:{}, limit: 150) {id, title, image, 
+                    preparationMinutes, cookingMinutes, pricePerServing}}`,
         },
         {headers: {Authorization: `Bearer ${access_token}`}})
         .catch((err) => console.log(err));

@@ -11,7 +11,6 @@ export default function RecipeInstructions(props) {
             fontFamily: "Coiny",
             fontSize: 20,
             position: "relative",
-            //transform: "translate(-32%, -32%)",
             top: 70,
             align: "left",
               marginBottom: "15px"
@@ -28,7 +27,6 @@ export default function RecipeInstructions(props) {
               position: "relative",
               align: "left",
                 marginLeft: "30px"
-              //transform: "translate(-30%, -30%)",
             }}
             key={entry.number}
           >

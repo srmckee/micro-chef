@@ -32,7 +32,7 @@
 
 .div-inner {
     display: inline-block !important;
-    margin-top: 30% ;
+    margin-top: 30% !important;
 }
 
 .h6-large-prop {
@@ -42,5 +42,5 @@
 }
 
 .bottom-margin {
-    bottom: 20px;
+    bottom: 20px !important;
 }

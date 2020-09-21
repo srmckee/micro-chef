@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Recipes({ match }) {
   const classes = useStyles();
-  const [recipeData, setRecipeData] = useState(null); // list containing lists of three recipes
+  // list containing lists of three recipes
+  const [recipeData, setRecipeData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     async function getData() {
