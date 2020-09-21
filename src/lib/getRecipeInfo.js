@@ -15,5 +15,5 @@ async function getRecipeInfo() {
         .catch((err) => console.log(err));
     return data_response;
 };
-//getRecipeInfo().then((recipes) => console.log(recipes.data.data.recipesListOfficials)).catch((err) => console.log("Error: " + err));
+
 export default getRecipeInfo;
