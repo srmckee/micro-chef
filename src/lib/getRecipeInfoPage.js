@@ -18,7 +18,5 @@ async function getRecipeInfoPage(recipeId) {
     .catch((err) => console.log(err));
   return data_response;
 }
-//getRecipeInfoPage(689502)
-//.then((recipes) => console.log(recipes.data.data.recipesListOfficials))
-//.catch((err) => console.log("Error: " + err));
+
 export default getRecipeInfoPage;
